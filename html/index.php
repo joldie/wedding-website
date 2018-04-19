@@ -9,10 +9,10 @@
 	<div id="home_content" align="center">
 	
 	    <div id="home_box">
-     	    <h1>[XX] and [XY]</h1>
-     	    <br>
-     	    <img id="img_portrait" src="images/portrait.jpg">
-     	    <h5>[Date] 2018</h5>
+			<h1>[XX] and [XY]</h1>
+			<br>
+			<img id="img_portrait" src="images/portrait.jpg">
+			<h5>[Date] 2018</h5>
 	    </div>
 	    
 	    <br> <br>

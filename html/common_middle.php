@@ -17,7 +17,6 @@
             <li class="menu-item"> <a id="link2" class="menu-item-link" href=""></a> </li>
             <li class="menu-item"> <a id="link3" class="menu-item-link" href=""></a> </li>
             <li class="menu-item"> <a id="link4" class="menu-item-link" href=""></a> </li>
-            <!--<li class="menu-item"> <a id="link5" class="menu-item-link" href=""></a> </li>-->
             <li class="menu-item"> <a id="link7" class="menu-item-link" href=""></a> </li>
         </ul>
     </nav>

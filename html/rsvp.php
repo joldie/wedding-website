@@ -1,52 +1,51 @@
 <?php
-   
-   // Save filename (without directory or ending) for later use
-   $filename = substr(__FILE__, strrpos(__FILE__, "/")+1, strrpos(__FILE__, ".")-strrpos(__FILE__, "/")-1);
 
-   include("common_top.php");
-   //$coming = $_POST['coming'];
-   //echo '<script>alert("ggg");</script>';
-   // Connect to MySQL database
-   require_once '../login.php';
-   $connection = new mysqli($db_hostname, $db_username, $db_password, $db_database);
-   if ($connection->connect_error) die($connection->connect_error);
-   
-   $name = $number = $email = $comment = $coming = $ip = '';
-   $posted = false;
-   
-   // If user inputted data, check and insert into database
-   if (isset($_POST['name1']) && isset($_POST['number']))
-   {
-      $posted = true;
-      $coming = sanitizeMySQL($connection, $_POST['coming']);
-      $email = sanitizeMySQL($connection, $_POST['email']);
-      $comment = sanitizeMySQL($connection, $_POST['comment']);
-      $ip = $_SERVER['REMOTE_ADDR'];
-      $date    = date("Y-m-d H-i-s", time());
-      $number  = $_POST['number'];
-      
-      for ($j = 0 ; $j < $number ; ++$j)
-      {
-         $name = sanitizeMySQL($connection, $_POST['name' . ($j + 1)]);
-         
-         $query = "INSERT INTO guests(name, coming, email, comment, ip, date) VALUES" .
-         "('$name', '$coming', '$email', '$comment', '$ip', '$date')";
-         
-         $result = $connection->query($query);
-         if (!$result) die ("Database access failed: " . $connection->error);
-      }
-   }
-   
-   // Close database connection
-   $connection->close();
-   
-   // Format text before input to database to avoid malicious attacks
-   function sanitizeMySQL($connection, $var)
-   {
-      $var = $connection->real_escape_string($var);
-      $var = sanitizeString($var);
-      return $var;
-   }
+    // Save filename (without directory or ending) for later use
+    $filename = substr(__FILE__, strrpos(__FILE__, "/")+1, strrpos(__FILE__, ".")-strrpos(__FILE__, "/")-1);
+
+    include("common_top.php");
+
+    // Connect to MySQL database
+    require_once '../login.php';
+    $connection = new mysqli($db_hostname, $db_username, $db_password, $db_database);
+    if ($connection->connect_error) die($connection->connect_error);
+
+    $name = $number = $email = $comment = $coming = $ip = '';
+    $posted = false;
+
+    // If user inputted data, check and insert into database
+    if (isset($_POST['name1']) && isset($_POST['number']))
+    {
+        $posted = true;
+        $coming = sanitizeMySQL($connection, $_POST['coming']);
+        $email = sanitizeMySQL($connection, $_POST['email']);
+        $comment = sanitizeMySQL($connection, $_POST['comment']);
+        $ip = $_SERVER['REMOTE_ADDR'];
+        $date    = date("Y-m-d H-i-s", time());
+        $number  = $_POST['number'];
+
+        for ($j = 0 ; $j < $number ; ++$j)
+        {
+            $name = sanitizeMySQL($connection, $_POST['name' . ($j + 1)]);
+
+            $query = "INSERT INTO guests(name, coming, email, comment, ip, date) VALUES" .
+            "('$name', '$coming', '$email', '$comment', '$ip', '$date')";
+
+            $result = $connection->query($query);
+            if (!$result) die ("Database access failed: " . $connection->error);
+        }
+    }
+
+    // Close database connection
+    $connection->close();
+
+    // Format text before input to database to avoid malicious attacks
+    function sanitizeMySQL($connection, $var)
+    {
+        $var = $connection->real_escape_string($var);
+        $var = sanitizeString($var);
+        return $var;
+    }
 
 echo <<<_END
 	

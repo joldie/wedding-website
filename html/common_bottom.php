@@ -1,4 +1,3 @@
-    <!-- Close content division -->
     </div>
     
     <footer id="main-footer">
@@ -8,7 +7,6 @@
         Background image by <a href="http://www.freepik.com">balasoiu / Freepik</a></p>
     </footer>
     
-    <!-- Close container/wrapper div -->
     </div>
     
 </body>

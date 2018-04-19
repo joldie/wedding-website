@@ -21,7 +21,7 @@
 	<!-- Basic page data
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<meta charset="utf-8">
-	<title>[XX] & [YY] 2018</title>
+	<title>[XX] & [XY] 2018</title>
 	<meta name="description" content="All you need to know about our wedding!">
 	<meta name="author" content="joldie">
 	
@@ -32,7 +32,6 @@
 	<!-- CSS, Font and Favicon
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<link rel="stylesheet" href="css/stylesheet.css">
-	<!--<link rel="icon" type="image/png" href="images/favicon.png">-->
 	
 	<!-- JavaScript libraries
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
